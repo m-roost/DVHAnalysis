@@ -14,6 +14,8 @@
 - Kelly Paradis (V)
 - Kelly Kisling (V)
 - Dan Polan (V)
+- Kelly Kissling (T,V)
+- Brian Anderson (C2, T, V)  
 
 
     
