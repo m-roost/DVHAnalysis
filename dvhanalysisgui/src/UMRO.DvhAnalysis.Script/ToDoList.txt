@@ -1,0 +1,32 @@
+﻿
+
+
+Check if all compoment plansetups of a plansum are loaded, if not, give user a warning.
+
+
+Should I save duplicates of EvaluationPlan, Compoments, and Metrics?????
+	you need add a timestamp, and byUser in each of the table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

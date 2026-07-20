@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib"
+                    xmlns:converters="clr-namespace:UMRO.DvhAnalysis.Script.Presentation.Converters">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Theme.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Defines a button style for a dialog box -->
+    <Style x:Key="DialogButton" TargetType="{x:Type Button}"
+           BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="96" />
+        <Setter Property="Height" Value="32" />
+    </Style>
+
+    <!-- Define how much space to separate controls -->
+    <s:Double x:Key="Space">5</s:Double>
+    <s:Double x:Key="LargeSpace">10</s:Double>
+
+    <Thickness x:Key="TopSpace" Top="{StaticResource Space}" />
+    <Thickness x:Key="LeftSpace" Left="{StaticResource Space}" />
+    <Thickness x:Key="RightSpace" Right="{StaticResource Space}" />
+    <Thickness x:Key="TopLeftSpace"
+               Left="{StaticResource Space}"
+               Top="{StaticResource Space}" />
+    <Thickness x:Key="BorderSpace"
+               Left="{StaticResource LargeSpace}"
+               Top="{StaticResource LargeSpace}"
+               Right="{StaticResource LargeSpace}"
+               Bottom="{StaticResource LargeSpace}" />
+    <Thickness x:Key="TopLargeSpace" Top="{StaticResource LargeSpace}" />
+    <Thickness x:Key="LeftLargeSpace" Left="{StaticResource LargeSpace}" />
+    <Thickness x:Key="LeftRightLargeSpace" Left="{StaticResource LargeSpace}"
+                                           Right="{StaticResource LargeSpace}" />
+    <Thickness x:Key="TopBottomLargeSpace" Top="{StaticResource LargeSpace}"
+                                           Bottom="{StaticResource LargeSpace}" />
+
+    <!-- Creates an enum-to-bool converter -->
+    <converters:EnumToBoolConverter x:Key="EnumToBoolConverter" />
+
+    <!-- Creates a type converter -->
+    <converters:TypeConverter x:Key="TypeConverter" />
+</ResourceDictionary>

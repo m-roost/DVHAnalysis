@@ -1,0 +1,144 @@
+﻿<Window
+    x:Class="UMRO.DvhAnalysis.Script.Presentation.Controls.BioEvalReportDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="BioEvalReportDialog"
+    SizeToContent="Height" Width="480"
+    WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize"
+    FontSize="{DynamicResource FontSize}"
+    >
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources.xaml" />
+                <ResourceDictionary Source="../../Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style
+                x:Key="DescriptionTextBlock"
+                TargetType="TextBlock"
+                BasedOn="{StaticResource {x:Type TextBlock}}"
+                >
+                <Setter Property="TextWrapping" Value="Wrap" />
+            </Style>
+
+            <Style
+                x:Key="ReportTextLabel"
+                TargetType="Label"
+                BasedOn="{StaticResource {x:Type Label}}"
+                >
+                <Setter Property="FontWeight" Value="Bold" />
+            </Style>
+
+            <Style
+                x:Key="ReportTextBox"
+                TargetType="TextBox"
+                BasedOn="{StaticResource {x:Type TextBox}}"
+                >
+                <Setter Property="TextWrapping" Value="Wrap" />
+                <Setter Property="VerticalContentAlignment" Value="Top" />
+                <Setter Property="AcceptsReturn" Value="True" />
+                <Setter Property="Height" Value="64" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <StackPanel
+        Orientation="Vertical"
+        Margin="{StaticResource BorderSpace}"
+        >
+
+        <!-- Main header -->
+        <Label
+            Content="BioEval Report Options"
+            Style="{StaticResource SectionHeader}"
+            />
+
+        <!-- Instructions -->
+        <TextBlock
+            Text="You may change the following text that will appear in the report:"
+            Style="{StaticResource DescriptionTextBlock}"
+            Margin="{StaticResource TopSpace}"
+            />
+
+        <!-- Physician request -->
+        <Label
+            Content="Physician request:"
+            Style="{StaticResource ReportTextLabel}"
+            Margin="{StaticResource TopLargeSpace}"
+            />
+        <TextBox
+            x:Name="PhysicianRequestTextBox"
+            Style="{StaticResource ReportTextBox}"
+            Margin="{StaticResource TopSpace}"
+            />
+
+        <!-- Physics report notes -->
+        <Label
+            Content="Physics report notes:"
+            Style="{StaticResource ReportTextLabel}"
+            Margin="{StaticResource TopLargeSpace}"
+            />
+        <TextBox
+            x:Name="PhysicsReportNotesTextBox"
+            Style="{StaticResource ReportTextBox}"
+            Margin="{StaticResource TopSpace}"
+            />
+
+        <!-- Physician final acknowledgment -->
+        <Label
+            Content="Physician final acknowledgment:"
+            Style="{StaticResource ReportTextLabel}"
+            Margin="{StaticResource TopLargeSpace}"
+            />
+        <TextBox
+            x:Name="PhysicianFinalAcknowledgmentTextBox"
+            Style="{StaticResource ReportTextBox}"
+            Margin="{StaticResource TopSpace}"
+            />
+
+        <StackPanel
+            Orientation="Vertical"
+            Margin="{StaticResource TopLargeSpace}"
+            >
+            <Separator />
+
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Margin="{StaticResource TopLargeSpace}"
+                >
+
+                <Button
+                    Content="Show"
+                    IsDefault="True"
+                    HorizontalAlignment="Right"
+                    Width="100" Height="32"
+                    Click="ShowButtonClicked"
+                    />
+
+                <Button
+                    x:Name="SaveToDocumentsButton"
+                    Content="To Documents"
+                    HorizontalAlignment="Right"
+                    Width="120" Height="32"
+                    Click="SaveToDocumentsButtonClicked"
+                    Margin="{StaticResource LeftSpace}"
+                    />
+
+                <Button
+                    Content="Cancel"
+                    IsCancel="True"
+                    HorizontalAlignment="Right"
+                    Width="100" Height="32"
+                    Margin="{StaticResource LeftSpace}"
+                    />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,2140 @@
+<?xml version="1.0"?>
+<ArrayOfTemplate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Template>
+    <Name>263 Prostate</Name>
+    <OwnerUserName>marthamm</OwnerUserName>
+    <IsGlobal>true</IsGlobal>
+    <IgnoreCase>false</IgnoreCase>
+    <StructureMetrics>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.1cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <Description>FEMORAL NECK</Description>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.1</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>V75Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>75</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>V70Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>70</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>V65Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>65</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>V50Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>50</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bladder</StructureId>
+        <DVHMetricSetup>
+          <Name>V75Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>75</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bladder</StructureId>
+        <DVHMetricSetup>
+          <Name>V70Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>70</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bladder</StructureId>
+        <DVHMetricSetup>
+          <Name>V65Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>65</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Femur_Head_L</StructureId>
+        <DVHMetricSetup>
+          <Name>Max[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="MaxDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Femur_Head_R</StructureId>
+        <DVHMetricSetup>
+          <Name>Max[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="MaxDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PenileBulb</StructureId>
+        <DVHMetricSetup>
+          <Name>Mean[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="MeanDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel</StructureId>
+        <DVHMetricSetup>
+          <Name>D1cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>1</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Colon_Sigmoid</StructureId>
+        <DVHMetricSetup>
+          <Name>D1cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>1</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PTV</StructureId>
+        <DVHMetricSetup>
+          <Name>V95%[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Relative</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>95</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PTV</StructureId>
+        <DVHMetricSetup>
+          <Name>Max[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="MaxDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+    </StructureMetrics>
+  </Template>
+  <Template>
+    <Name>263 Liver SBRT 5fx Metastatic</Name>
+    <Description>Tg-263 template for Liver SBRT 5 fractions metastatic</Description>
+    <OwnerUserName>marthamm</OwnerUserName>
+    <IsGlobal>true</IsGlobal>
+    <IgnoreCase>false</IgnoreCase>
+    <StructureMetrics>
+      <StructureMetric>
+        <StructureId>Kidneys</StructureId>
+        <DVHMetricSetup>
+          <Name>D35%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>35</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>SpinalCord</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>V27.5Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>27.5</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>V32Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>32</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Duodenum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel_Small</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Stomach</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Chestwall</StructureId>
+        <DVHMetricSetup>
+          <Name>V35Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>35</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rib</StructureId>
+        <DVHMetricSetup>
+          <Name>V35Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>35</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Colon</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver-GTV</StructureId>
+        <DVHMetricSetup>
+          <Name>Clinical NTCP Liver Metastatic</Name>
+          <IsAutoName>false</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="NTCPMetric">
+            <LKBn>0.97</LKBn>
+            <LKBm>0.12</LKBm>
+            <LKBD50>40.7</LKBD50>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PTV</StructureId>
+        <DVHMetricSetup>
+          <Name>V100%[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Relative</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>100</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+    </StructureMetrics>
+  </Template>
+  <Template>
+    <Name>263 Liver SBRT 5fx Primary</Name>
+    <OwnerUserName>marthamm</OwnerUserName>
+    <IsGlobal>true</IsGlobal>
+    <IgnoreCase>false</IgnoreCase>
+    <StructureMetrics>
+      <StructureMetric>
+        <StructureId>Kidneys</StructureId>
+        <DVHMetricSetup>
+          <Name>D35%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>35</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>SpinalCord</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>V27.5Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>27.5</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>V32Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>32</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Duodenum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel_Small</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Stomach</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Chestwall</StructureId>
+        <DVHMetricSetup>
+          <Name>V35Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>35</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rib</StructureId>
+        <DVHMetricSetup>
+          <Name>V35Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>35</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Colon</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver-GTV</StructureId>
+        <DVHMetricSetup>
+          <Name>Clinical NTCP Liver Primary</Name>
+          <IsAutoName>false</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="NTCPMetric">
+            <LKBn>0.97</LKBn>
+            <LKBm>0.12</LKBm>
+            <LKBD50>35.4</LKBD50>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PTV</StructureId>
+        <DVHMetricSetup>
+          <Name>V100%[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Relative</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>100</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+    </StructureMetrics>
+  </Template>
+  <Template>
+    <Name>263 Liver SBRT 3fx Metastatic</Name>
+    <Description>TG 263 template for Liver SBRT 3 fraction metastatic</Description>
+    <OwnerUserName>marthamm</OwnerUserName>
+    <IsGlobal>true</IsGlobal>
+    <IgnoreCase>false</IgnoreCase>
+    <StructureMetrics>
+      <StructureMetric>
+        <StructureId>Kidneys</StructureId>
+        <DVHMetricSetup>
+          <Name>D35%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>35</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>SpinalCord</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Duodenum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel_Small</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Stomach</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Chestwall</StructureId>
+        <DVHMetricSetup>
+          <Name>V30Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>30</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rib</StructureId>
+        <DVHMetricSetup>
+          <Name>V30Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>30</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Colon</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver-GTV</StructureId>
+        <DVHMetricSetup>
+          <Name>Clinical NTCP Liver Metastatic</Name>
+          <IsAutoName>false</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="NTCPMetric">
+            <LKBn>0.97</LKBn>
+            <LKBm>0.12</LKBm>
+            <LKBD50>40.7</LKBD50>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PTV</StructureId>
+        <DVHMetricSetup>
+          <Name>V100%[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Relative</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>100</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+    </StructureMetrics>
+  </Template>
+  <Template>
+    <Name>263 Liver SBRT 3fx Primary</Name>
+    <Description>TG263 template for liver SBRT 3fx primary</Description>
+    <OwnerUserName>marthamm</OwnerUserName>
+    <IsGlobal>true</IsGlobal>
+    <IgnoreCase>false</IgnoreCase>
+    <StructureMetrics>
+      <StructureMetric>
+        <StructureId>Kidneys</StructureId>
+        <DVHMetricSetup>
+          <Name>D35%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>35</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidney_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D67%[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>67</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>SpinalCord</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Duodenum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel_Small</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Stomach</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Chestwall</StructureId>
+        <DVHMetricSetup>
+          <Name>V30Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>30</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rib</StructureId>
+        <DVHMetricSetup>
+          <Name>V30Gy[cc]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>30</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Colon</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.5cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.5</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver-GTV</StructureId>
+        <DVHMetricSetup>
+          <Name>Clinical NTCP Liver Primary</Name>
+          <IsAutoName>false</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="NTCPMetric">
+            <LKBn>0.97</LKBn>
+            <LKBm>0.12</LKBm>
+            <LKBD50>35.4</LKBD50>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PTV</StructureId>
+        <DVHMetricSetup>
+          <Name>V100%[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Relative</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>100</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+    </StructureMetrics>
+  </Template>
+  <Template>
+    <Name>263 Post-op Prostate Protocol</Name>
+    <Description>Protocol NTC02203695</Description>
+    <OwnerUserName>marthamm</OwnerUserName>
+    <IsGlobal>true</IsGlobal>
+    <IgnoreCase>false</IgnoreCase>
+    <StructureMetrics>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>V65Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>65</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>V40Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>40</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bladder</StructureId>
+        <DVHMetricSetup>
+          <Name>V65Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>65</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bladder</StructureId>
+        <DVHMetricSetup>
+          <Name>V40Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>40</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Femur_Head_L</StructureId>
+        <DVHMetricSetup>
+          <Name>V50Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>50</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Femur_Head_R</StructureId>
+        <DVHMetricSetup>
+          <Name>V50Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>50</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>PenileBulb</StructureId>
+        <DVHMetricSetup>
+          <Name>Mean[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="MeanDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel_Large</StructureId>
+        <DVHMetricSetup>
+          <Name>D1cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>1</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+    </StructureMetrics>
+  </Template>
+  <Template>
+    <Name>$SMPC_New</Name>
+    <OwnerUserName>vineberg</OwnerUserName>
+    <IsGlobal>true</IsGlobal>
+    <IgnoreCase>false</IgnoreCase>
+    <StructureMetrics>
+      <StructureMetric>
+        <StructureId>SpinalCord</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>SpinalCord</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Esophagus</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>CaudaEquina</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>CaudaEquina</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Brainstem</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Brainstem</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Brachial_Plex</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Brachial_Plex</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>ChestWall</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>ChestWall</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>GreatVessels</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>GreatVessels</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Heart</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Trachea</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Trachea</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Lungs</StructureId>
+        <DVHMetricSetup>
+          <Name>Mean[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="MeanDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Lungs</StructureId>
+        <DVHMetricSetup>
+          <Name>Mean(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="MeanDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Lungs</StructureId>
+        <DVHMetricSetup>
+          <Name>V20Gy[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>20</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Lungs</StructureId>
+        <DVHMetricSetup>
+          <Name>V20EQD2Gy(LQ, α/β=2.5)[%]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="VolumeWithDoseMetric">
+            <Dose>20</Dose>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Lungs</StructureId>
+        <DVHMetricSetup>
+          <Name>DC1000cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseComplementToVolumeMetric">
+            <Volume>1000</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Lungs</StructureId>
+        <DVHMetricSetup>
+          <Name>DC1000cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseComplementToVolumeMetric">
+            <Volume>1000</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver</StructureId>
+        <DVHMetricSetup>
+          <Name>Mean[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="MeanDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver</StructureId>
+        <DVHMetricSetup>
+          <Name>Mean(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>Relative</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="MeanDoseMetric" />
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver</StructureId>
+        <DVHMetricSetup>
+          <Name>DC700cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseComplementToVolumeMetric">
+            <Volume>700</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Liver</StructureId>
+        <DVHMetricSetup>
+          <Name>DC700cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseComplementToVolumeMetric">
+            <Volume>700</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel_Small</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bowel_Small</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>SacralPlex</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>SacralPlex</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Colon</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Colon</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidneys</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Kidneys</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Duodenum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Duodenum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Stomach</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Stomach</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Rectum</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bladder</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Bladder</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>OpticChiasm</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>OpticChiasm</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>OpticNrv_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>OpticNrv_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>OpticNrv_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>OpticNrv_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Retina_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Retina_L</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Retina_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc[Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="StandardDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+      <StructureMetric>
+        <StructureId>Retina_R</StructureId>
+        <DVHMetricSetup>
+          <Name>D0.03cc(LQ, α/β=2.5)[EQD2Gy]</Name>
+          <IsAutoName>true</IsAutoName>
+          <DVHModel xsi:type="LQBioDoseDVHModel">
+            <DoseType>Absolute</DoseType>
+            <VolumeType>AbsoluteCm3</VolumeType>
+            <BinSize>0.1</BinSize>
+            <AlphaBeta>2.5</AlphaBeta>
+          </DVHModel>
+          <Metric xsi:type="DoseToVolumeMetric">
+            <Volume>0.03</Volume>
+          </Metric>
+        </DVHMetricSetup>
+      </StructureMetric>
+    </StructureMetrics>
+  </Template>
+</ArrayOfTemplate>

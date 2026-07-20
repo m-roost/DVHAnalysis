@@ -1,0 +1,28 @@
+﻿using System;
+using System.Windows.Input;
+using UMRO.DvhAnalysis.Script.Presentation.ViewModels.Controls;
+
+namespace UMRO.DvhAnalysis.Script.Presentation.Commands
+{
+    public class AddMetricCommand : ICommand
+    {
+        private MetricEditorViewModel MetricEditorViewModel { get; set; }
+
+        public AddMetricCommand(MetricEditorViewModel metricEditorViewModel)
+        {
+            MetricEditorViewModel = metricEditorViewModel;
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public void Execute(object parameter)
+        {
+            MetricEditorViewModel.AddDVHMetricSetup();
+        }
+    }
+}

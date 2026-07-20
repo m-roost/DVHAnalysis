@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVHAnalysis", "DVHAnalysis\DVHAnalysis.csproj", "{978F4ACD-0018-4DED-A930-2F4E9A9C0721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVHAnalysis.UnitTests", "DVHAnalysis.UnitTests\DVHAnalysis.UnitTests.csproj", "{03FFCABE-17E4-43EB-8973-EE4168483C06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{96F25986-73C4-4911-8AA5-49CF71B34DC0}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{978F4ACD-0018-4DED-A930-2F4E9A9C0721}.Debug|x64.ActiveCfg = Debug|x64
+		{978F4ACD-0018-4DED-A930-2F4E9A9C0721}.Debug|x64.Build.0 = Debug|x64
+		{978F4ACD-0018-4DED-A930-2F4E9A9C0721}.Release|x64.ActiveCfg = Release|x64
+		{978F4ACD-0018-4DED-A930-2F4E9A9C0721}.Release|x64.Build.0 = Release|x64
+		{03FFCABE-17E4-43EB-8973-EE4168483C06}.Debug|x64.ActiveCfg = Debug|x64
+		{03FFCABE-17E4-43EB-8973-EE4168483C06}.Debug|x64.Build.0 = Debug|x64
+		{03FFCABE-17E4-43EB-8973-EE4168483C06}.Release|x64.ActiveCfg = Release|x64
+		{03FFCABE-17E4-43EB-8973-EE4168483C06}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDCC0096-9E2C-4BF5-9E6E-DBC85764829D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://michiganmedicine-tfs.med.umich.edu/tfs_pace/radonc-defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DVHAnalysis.UnitTests\\DVHAnalysis.UnitTests.csproj
+		SccProjectName1 = DVHAnalysis.UnitTests
+		SccLocalPath1 = DVHAnalysis.UnitTests
+		SccProjectUniqueName2 = DVHAnalysis\\DVHAnalysis.csproj
+		SccProjectName2 = DVHAnalysis
+		SccLocalPath2 = DVHAnalysis
+	EndGlobalSection
+EndGlobal

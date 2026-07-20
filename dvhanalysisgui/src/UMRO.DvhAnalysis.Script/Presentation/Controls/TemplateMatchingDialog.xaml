@@ -1,0 +1,97 @@
+﻿<Window x:Class="UMRO.DvhAnalysis.Script.Presentation.Controls.TemplateMatchingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Template Structure Matching" Height="500" Width="500"
+        FontSize="{DynamicResource FontSize}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources.xaml" />
+                <ResourceDictionary Source="../../Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="{StaticResource BorderSpace}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />       <!-- Main contents -->
+            <RowDefinition Height="Auto" />    <!-- Dialog buttons -->
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />    <!-- Header -->
+                <RowDefinition Height="Auto" />    <!-- Instructions -->
+                <RowDefinition Height="*" />       <!-- Data grid -->
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Label Grid.Row="0" Content="Templates"
+                   Margin="{StaticResource TopSpace}"
+                   Style="{StaticResource SectionHeader}" />
+
+            <!-- Instructions -->
+            <TextBlock Grid.Row="1" Margin="{StaticResource TopSpace}"
+                       TextWrapping="Wrap"
+                       Text="Please ensure that the structures in the template (left column) correctly match those of the patient (right column). Choose &quot;(None)&quot; to ignore the structure in the template." />
+
+            <!-- Data grid -->
+            <DataGrid Grid.Row="2" Margin="{StaticResource TopSpace}"
+                      ItemsSource="{Binding StructureMatches}"
+                      AutoGenerateColumns="False"
+                      GridLinesVisibility="None"
+                      IsReadOnly="True">
+                <DataGrid.Columns>
+
+                    <!-- Template structure -->
+                    <DataGridTextColumn Header="Structure in Template" Width="200"
+                                        Binding="{Binding TemplateStructureId}" />
+
+                    <!-- Patient structure column -->
+                    <DataGridTemplateColumn Header="Structure in Patient" Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ComboBox ItemsSource="{Binding DataContext.PatientStructureIdsDisplay, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                          SelectedItem="{Binding PatientStructureIdDisplay, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                        <!-- Center and stretch combo box in cell -->
+                        <DataGridTemplateColumn.CellStyle>
+                            <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="DataGridCell">
+                                            <Grid>
+                                                <ContentPresenter Margin="4,2"
+                                                                  VerticalAlignment="Center"
+                                                                  HorizontalAlignment="Stretch" />
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGridTemplateColumn.CellStyle>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Margin="{StaticResource TopSpace}"
+                    Orientation="Horizontal" HorizontalAlignment="Right">
+
+            <Button Content="OK" IsDefault="True"
+                    HorizontalAlignment="Right"
+                    Width="125" Height="32"
+                    Click="OK_Button_Click"/>
+
+            <Button Margin="{StaticResource LeftSpace}"
+                    Content="Cancel" IsCancel="True"
+                    HorizontalAlignment="Right"
+                    Width="125" Height="32" />
+        </StackPanel>
+    </Grid>
+</Window>

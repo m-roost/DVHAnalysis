@@ -1,0 +1,169 @@
+﻿<Window x:Class="UMRO.DvhAnalysis.Script.Presentation.Controls.TemplateDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Title="Templates" Height="400" Width="500"
+        WindowStartupLocation="CenterScreen"
+        FontSize="{DynamicResource FontSize}"
+        Background="{DynamicResource ControlLightBrush}">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources.xaml" />
+                <ResourceDictionary Source="../../Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Sort the templates -->
+            <CollectionViewSource
+                x:Key="TemplatesView"
+                Source="{Binding UserTemplates}"
+                >
+                <CollectionViewSource.SortDescriptions>
+                    <componentModel:SortDescription PropertyName="GroupName" />
+                    <componentModel:SortDescription PropertyName="Name" />
+                </CollectionViewSource.SortDescriptions>
+                <CollectionViewSource.GroupDescriptions>
+                    <PropertyGroupDescription PropertyName="GroupName" />
+                </CollectionViewSource.GroupDescriptions>
+            </CollectionViewSource>
+
+            <BooleanToVisibilityConverter x:Key="VisibilityConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="{StaticResource BorderSpace}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />    <!-- Main contents -->
+            <RowDefinition Height="Auto" /> <!-- Dialog buttons -->
+        </Grid.RowDefinitions>
+
+        <!-- Main contents -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" /> <!-- Left side (template list) -->
+                <ColumnDefinition Width="*" /> <!-- Right side (template properties) -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Left side (template list) -->
+            <Grid Grid.Column="0"
+                  Margin="{StaticResource RightSpace}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" /> <!-- Template header -->
+                    <RowDefinition Height="*" />    <!-- Template list box -->
+                    <RowDefinition Height="Auto" /> <!-- Remove button -->
+                </Grid.RowDefinitions>
+
+                <!-- Template header -->
+                <Label Grid.Row="0"
+                       Content="Templates"
+                       Style="{StaticResource SectionHeader}" />
+
+                <!-- Template list box -->
+                <ListBox Grid.Row="1" Name="TemplateListBox"
+                         Margin="{StaticResource TopLargeSpace}"
+                         ItemsSource="{Binding Source={StaticResource TemplatesView}}"
+                         DisplayMemberPath="Name">
+
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"
+                                               Foreground="{StaticResource ControlDarkBrush}"
+                                               FontWeight="Bold" />
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                </ListBox>
+
+                <!-- Remove button -->
+                <Button Grid.Row="2"
+                        Content="Remove"
+                        Margin="{StaticResource TopSpace}"
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource DialogButton}"
+                        IsEnabled="{Binding CurrentItem.ShowIsGlobalCheckBox,
+                                    Source={StaticResource TemplatesView}}"
+                        Click="RemoveTemplate" />
+
+            </Grid> <!-- Left side -->
+
+            <!-- Right side (template properties) -->
+            <Grid Grid.Column="1"
+                  Margin="{StaticResource LeftSpace}"
+                  DataContext="{Binding SelectedItem, ElementName=TemplateListBox}">
+
+                <StackPanel Orientation="Vertical">
+                    <!-- Template properties header -->
+                    <Label Content="Template Properties"
+                           Style="{StaticResource SectionHeader}" />
+                    
+                    <!-- Template name -->
+                    <DockPanel Margin="{StaticResource TopLargeSpace}">
+                        <!-- Template name label -->
+                        <TextBlock Text="Name:"
+                                   VerticalAlignment="Center" />
+
+                        <!-- Template name text box -->
+                        <TextBox Margin="{StaticResource LeftSpace}"
+                                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding ShowIsGlobalCheckBox}"
+                                 />
+                    </DockPanel>
+
+                    <!-- Template description -->
+                    <StackPanel Orientation="Vertical"
+                                Margin="{StaticResource TopLargeSpace}">
+                        <!-- Template description label -->
+                        <TextBlock Text="Description:" />
+
+                        <!-- Template description text box -->
+                        <TextBox Margin="{StaticResource TopSpace}"
+                                 MinHeight="64" TextWrapping="Wrap"
+                                 VerticalContentAlignment="Top"
+                                 Text="{Binding Description}"
+                                 IsEnabled="{Binding ShowIsGlobalCheckBox}"
+                                 />
+                    </StackPanel>
+
+                    <!-- Template global or not -->
+                    <CheckBox
+                        Content="Make available to everyone"
+                        IsChecked="{Binding IsGlobal}"
+                        Visibility="{Binding ShowIsGlobalCheckBox,
+                                             Converter={StaticResource VisibilityConverter}}"
+                        Margin="{StaticResource TopLargeSpace}"
+                        />
+                </StackPanel>
+            </Grid> <!-- Right side -->
+        </Grid> <!-- Main contents -->
+
+        <!-- Dialog buttons -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Vertical"
+                    Margin="{StaticResource TopLargeSpace}">
+
+            <Separator />
+            
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="{StaticResource TopLargeSpace}">
+                
+                <!-- OK button -->
+                <Button Content="OK"
+                        IsDefault="True"
+                        Style="{StaticResource DialogButton}"
+                        Click="SaveTemplatesAndClose"/>
+                
+                <!-- Cancel button -->
+                <Button Content="Cancel"
+                        IsCancel="True"
+                        Margin="{StaticResource LeftSpace}"
+                        Style="{StaticResource DialogButton}" />
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
