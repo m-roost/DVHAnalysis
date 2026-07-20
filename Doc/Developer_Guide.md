@@ -139,7 +139,7 @@ DVH Analysis can save various metric values from PlanSetups/PlanSums into a SQL 
 </div>
 <br>
 
-If this functionality is required, backend SQL database and tables need to be created and configured. Schema to create these tables are included in [`dvhanalysisgui\SQL_Schema\SQLQuery_Create_Tables_for_Saved_Metrics.sql`](../dvhanalysisgui/SQL_Schema/SQLQuery_Create_Tables_for_Saved_Metrics.sql).
+If this functionality is required, backend SQL database and tables need to be created and configured. Schema to create these tables are included in [`dvhanalysisgui\SQL_Schema\SQLQuery_Create_Tables_for_Saved_Metrics.sql`](../dvhanalysisgui/SQL_schema/SQLQuery_Create_Tables_for_Saved_Metrics.sql).
 
 <div style="text-align: center;">
     <img src="./images/sqltablenames.png" alt="Sample Image" width="300" style="border: 2px solid gray;"/>
