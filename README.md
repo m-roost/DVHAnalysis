@@ -19,3 +19,5 @@ DVH Analysis is a C# WPF program based on Varian Eclipse Scripting API (ESAPI). 
 - User guide in how to use the script can be found here [DVHAnalysisScript.pdf](./dvhanalysisgui/resources/DVHAnalysisScript.pdf)
 
 - For change log in recent versions, see [Version_Tracking.md](./Doc/Version_Tracking.md)
+
+- For contact info, see [SUPPORT.md](./SUPPORT.md)

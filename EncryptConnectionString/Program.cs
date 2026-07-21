@@ -39,8 +39,11 @@ namespace EncryptConnectionString
             string AriaSfConnString = EncryptConnectionString(AriaSfConnString_raw, publicKey);
             Console.WriteLine("\nEncrypted AriaSfConnString: \n\n" + AriaSfConnString);
 
-            Console.WriteLine("\n\nProgram finished. You can press any key to close this window now.");
+            // Decrpty and print to test
+            string AriaSfConnString_decrypted = DecryptConnectionString(AriaSfConnString, privateKeyString);
+            Console.WriteLine("\nDecrypted AriaSfConnString: \n\n" + AriaSfConnString_decrypted);
 
+            Console.WriteLine("\n\nProgram finished. You can press any key to close this window now.");
 
             Console.Read();
         }
@@ -63,7 +66,7 @@ namespace EncryptConnectionString
             using (var rsa = new RSACryptoServiceProvider())
             {
                 rsa.ImportParameters(publicKey);
-                encryptedData = rsa.Encrypt(Encoding.UTF8.GetBytes(connectionString), false);
+                encryptedData = rsa.Encrypt(Encoding.UTF8.GetBytes(connectionString), true);
             }
             return Convert.ToBase64String(encryptedData);
         }
@@ -75,10 +78,11 @@ namespace EncryptConnectionString
             {
                 RSAParameters privateKey = StringToRSAParameters(privateKeyString);
                 rsa.ImportParameters(privateKey);
-                decryptedData = rsa.Decrypt(Convert.FromBase64String(encryptedConnectionString), false);
+                decryptedData = rsa.Decrypt(Convert.FromBase64String(encryptedConnectionString), true);
             }
             return Encoding.UTF8.GetString(decryptedData);
         }
+
 
         // Helper method to convert RSAParameters to a string
         public static string RSAParametersToString(RSAParameters key)

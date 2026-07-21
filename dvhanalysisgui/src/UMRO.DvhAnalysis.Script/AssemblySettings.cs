@@ -84,7 +84,7 @@ namespace UMRO.DvhAnalysis.Script
             {
                 RSAParameters privateKey = StringToRSAParameters(privateKeyString);
                 rsa.ImportParameters(privateKey);
-                decryptedData = rsa.Decrypt(Convert.FromBase64String(encryptedConnectionString), false);
+                decryptedData = rsa.Decrypt(Convert.FromBase64String(encryptedConnectionString), true);
             }
             return Encoding.UTF8.GetString(decryptedData);
         }
