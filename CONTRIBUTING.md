@@ -21,3 +21,18 @@ By making a contribution to this project, I certify that:
 (b) The contribution is based upon previous work that, to the best of my knowledge, is covered under an appropriate open source license and I have the right under that license to submit that work with modifications, whether created in whole or in part by me, under the same open source license (unless I am permitted to submit under a different license), as indicated in the file; or
 (c) The contribution was provided directly to me by some other person who certified (a), (b) or (c) and I have not modified it.
 (d) I understand and agree that this project and the contribution are public and that a record of the contribution (including all personal information I submit with it, including my sign-off) is maintained indefinitely and may be redistributed consistent with this project or the open source license(s) involved.
+
+
+## Detect Secrets Before Each Commit
+
+This repo is configured to use `detect-secrets` to scan git tracked code base for potential secrets.
+
+**[detect-secrets](https://github.com/Yelp/detect-secrets)** (by Yelp) is the *scanner*. It reads each file line by line and runs a set of detectors over every line. Each detector looks for one kind of secret, such as an AWS key, a high-entropy random string, or the word "password" next to a value.
+
+To install detect-secrets. Python 3 and pip are required.
+
+   `pip install pre-commit detect-secrets`
+
+To run only the detect-secrets scan (must be at the root dir of this repo for detect-secrets plugins to load properly):
+
+`git ls-files -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline`

@@ -13,11 +13,11 @@ namespace EncryptConnectionString
 
 
             // Define a connection string to encrypt
-            string AriaConnString_raw = "data source=XXX_SQLServerName;initial catalog=VARIAN;user id=XXX_UserID;password=XXX_Password;App=DvhAnalysis";
+            string AriaConnString_raw = "data source=XXX_SQLServerName;initial catalog=VARIAN;user id=XXX_UserID;password=XXX_Password;App=DvhAnalysis"; // pragma: allowlist secret
 
             Console.WriteLine("\nOriginal AriaConnString: \n" + AriaConnString_raw);
 
-            string AriaSfConnString_raw = "data source=XXX_SQLServerName;initial catalog=VarianSharedFrameworkDatabase;user id=XXX_UserID;password=XXX_Password;App=DvhAnalysis";
+            string AriaSfConnString_raw = "data source=XXX_SQLServerName;initial catalog=VarianSharedFrameworkDatabase;user id=XXX_UserID;password=XXX_Password;App=DvhAnalysis"; // pragma: allowlist secret
 
             Console.WriteLine("\nOriginal AriaSfConnString: \n" + AriaSfConnString_raw);
 
