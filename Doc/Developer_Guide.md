@@ -24,8 +24,6 @@ The package structure includes:
 
 * `dvhanalysislib`: Contains the calculation lib for DVH Analysis.
 
-* `VMS.TPS_dlls`: Contains the VMS.TPS.Common.Model.API.dll and VMS.TPS.Common.Model.Types.dll needed to compile the code.
-
 * `EncryptConnectionString`: A simple console application to encode SQL connection strings. (This is optional and provides a basic layer of security to prevent storing readable usernames and passwords in the config file.)
 
 * `dvhanalysisgui\SQL_Schema`: Contains SQL queries to create backend SQL tables needed for saving metrics.
@@ -38,7 +36,18 @@ The package structure includes:
 
 ## Build the code
 
-The projects reference `VMS.TPS.Common.Model.API` / `.Types`. Set the folder **once** via any of
+### Provide your own ESAPI reference assemblies
+
+The projects reference `VMS.TPS.Common.Model.API` / `.Types`. These DLLs are **not** part of this repository
+(see the note above). Obtain them from your own Varian installation, for example:
+
+* the Eclipse / ESAPI install folder on a thick client (typically under `C:\Program Files (x86)\Varian\...`
+  or the GAC), or
+* the ESAPI reference assemblies distributed with the Eclipse Scripting API documentation for your Eclipse
+  version (available to licensed customers via Varian / MyVarian).
+
+Copy them into a local folder (for example `C:\ESAPI\<version>`) that is **outside** the repository, or keep
+them where Varian installed them. Do not commit them to this repository. Then set the folder **once** via any of
 (highest precedence first):
 
 1. Copy `Directory.Build.user.props.example` -> `Directory.Build.user.props` and set
@@ -46,7 +55,7 @@ The projects reference `VMS.TPS.Common.Model.API` / `.Types`. Set the folder **o
 2. set environment variable `ESAPI_REFERENCE_PATH`; **or**
 3. edit the default in `Directory.Build.props`.
 
-Default: `C:\ESAPI\15.6.5.10`.
+Default: `C:\ESAPI\15.6.5.10` (change this to match the ESAPI version of the Eclipse system you deploy to).
 `HintPath` is compile-time only — Eclipse loads its own ESAPI at runtime — so thick-client
 developers can point this at their local GAC to compile against their installed Eclipse version.
 

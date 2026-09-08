@@ -354,3 +354,8 @@ healthchecksdb
 /dvhanalysisgui/src/UMRO.DvhAnalysis.Script/Release/App.config
 /dvhanalysisgui/src/UMRO.DvhAnalysis.Script/Debug/App.config
 
+
+# Varian ESAPI assemblies are proprietary and must never be committed (use EsapiReferencePath instead)
+VMS.TPS_dlls/
+VMS.TPS.Common.Model.API.dll
+VMS.TPS.Common.Model.Types.dll

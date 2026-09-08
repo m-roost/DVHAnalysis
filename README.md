@@ -21,3 +21,13 @@ DVH Analysis is a C# WPF program based on Varian Eclipse Scripting API (ESAPI). 
 - For change log in recent versions, see [Version_Tracking.md](./Doc/Version_Tracking.md)
 
 - For contact info, see [SUPPORT.md](./SUPPORT.md)
+
+# License
+
+DVH Analysis is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See [LICENSE.txt](./LICENSE.txt) for the full text.
+
+Copyright (C) The Regents of the University of Michigan.
+
+- This repository contains source code only. Third-party libraries are referenced from public package registries and remain under their own licenses; see [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md).
+
+- Alternative / commercial licensing is available; see [COMMERCIAL-LICENSE.md](./COMMERCIAL-LICENSE.md).
