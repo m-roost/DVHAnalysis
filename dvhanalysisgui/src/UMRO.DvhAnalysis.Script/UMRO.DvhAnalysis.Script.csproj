@@ -86,15 +86,6 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="UMRO.Aria.Documents">
-      <HintPath>..\..\resources\UMRO.Aria.Documents.dll</HintPath>
-    </Reference>
-    <Reference Include="UMRO.Utils.DVHViewer-0.9.3.0">
-      <HintPath>..\..\resources\UMRO.Utils.DVHViewer-0.9.3.0.dll</HintPath>
-    </Reference>
-    <Reference Include="UMRO.Utils.FlexibleTitleBar-1.3.0.0">
-      <HintPath>..\..\resources\UMRO.Utils.FlexibleTitleBar-1.3.0.0.dll</HintPath>
-    </Reference>
     <Reference Include="VMS.TPS.Common.Model.API, Version=1.0.450.29, Culture=neutral, PublicKeyToken=305b81e210ec4b89, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(EsapiReferencePath)\VMS.TPS.Common.Model.API.dll</HintPath>
@@ -318,6 +309,22 @@
     <ProjectReference Include="..\..\..\dvhanalysislib\DVHAnalysis\DVHAnalysis.csproj">
       <Project>{978f4acd-0018-4ded-a930-2f4e9a9c0721}</Project>
       <Name>DVHAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Aria.Access.Rest\UMRO.Aria.Access.Rest.csproj">
+      <Project>{6a6648e0-40e9-4af4-897c-5a54d04bb3f5}</Project>
+      <Name>UMRO.Aria.Access.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Aria.Documents\UMRO.Aria.Documents.csproj">
+      <Project>{e97d7799-a918-4dca-b78b-374911feef37}</Project>
+      <Name>UMRO.Aria.Documents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Utils.DVHViewer\UMRO.Utils.DVHViewer.csproj">
+      <Project>{6f99536e-1f5a-4c85-834a-1623f15e1d6a}</Project>
+      <Name>UMRO.Utils.DVHViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Utils.FlexibleTitleBar\UMRO.Utils.FlexibleTitleBar.csproj">
+      <Project>{e98053e9-7e5a-4de7-a234-50e4e16cc86f}</Project>
+      <Name>UMRO.Utils.FlexibleTitleBar</Name>
     </ProjectReference>
     <ProjectReference Include="..\MRoar_Database\MRoar_Database.csproj">
       <Project>{2f0363ad-4313-4e48-b2ec-4afddfcf239b}</Project>

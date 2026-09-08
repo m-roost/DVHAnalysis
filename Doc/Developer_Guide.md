@@ -28,7 +28,12 @@ The package structure includes:
 
 * `dvhanalysisgui\SQL_Schema`: Contains SQL queries to create backend SQL tables needed for saving metrics.
 
-* `dvhanalysisgui\resources`: Contains some dll lib needed, pdf user guide, and data files for metrics and templates.
+* `dvhanalysisgui\resources`: Contains the pdf user guide and data files for metrics and templates.
+
+* `dvhanalysisgui\src\UMRO.Aria.Access.Rest`, `UMRO.Aria.Documents`, `UMRO.Utils.DVHViewer` and
+  `UMRO.Utils.FlexibleTitleBar` are small University of Michigan helper libraries (ARIA document upload REST
+  client, DVH plot control and title-bar control) that used to be shipped as pre-compiled DLLs. Their source
+  was recovered by decompiling those DLLs and they are now built from source as part of the solution.
 
 * `dvhanalysisgui\src\UMRO.DvhAnalysis.Script` project is the actual WPF plugin script of DVH Analysis UI, which will be used in Eclipse. The entry point that marks ESAPI binary plugin script (Script class and Execute function) is located in file `"dvhanalysisgui\src\UMRO.DvhAnalysis.Script\Script.cs"`
 

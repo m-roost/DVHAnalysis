@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:v="clr-namespace:VMS.TPS.Common.Model.Types;assembly=VMS.TPS.Common.Model.Types"
-        xmlns:t="clr-namespace:UMRO.Utils.FlexibleTitleBar;assembly=UMRO.Utils.FlexibleTitleBar-1.3.0.0"
+        xmlns:t="clr-namespace:UMRO.Utils.FlexibleTitleBar;assembly=UMRO.Utils.FlexibleTitleBar"
         xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         xmlns:converters="clr-namespace:UMRO.DvhAnalysis.Script.Presentation.Converters"
         xmlns:controls="clr-namespace:UMRO.DvhAnalysis.Script.Presentation.ViewModels.Controls"

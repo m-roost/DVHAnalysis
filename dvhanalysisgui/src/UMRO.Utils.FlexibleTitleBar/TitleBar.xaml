@@ -1,0 +1,173 @@
+﻿<UserControl x:Class="UMRO.Utils.FlexibleTitleBar.TitleBar" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" x:Name="This" Foreground="#FFFFFFFF" FontSize="16">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+      <SolidColorBrush x:Key="ClinicalWarningColor" Color="#CC0000" />
+      <SolidColorBrush x:Key="MichiganBlue" Color="#002D62" />
+      <Style x:Key="CourseOrPlanSpaceColumn" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="*" />
+        <Style.Triggers>
+          <DataTrigger Value="False" Binding="{Binding ShowCourseAndPlan, ElementName=This}">
+            <Setter Property="Width" Value="0" />
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+      <Style x:Key="CourseOrPlanColumn" TargetType="{x:Type ColumnDefinition}">
+        <Setter Property="Width" Value="Auto" />
+        <Style.Triggers>
+          <DataTrigger Value="False" Binding="{Binding ShowCourseAndPlan, ElementName=This}">
+            <Setter Property="Width" Value="0" />
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+      <Color x:Key="HelpStrokeColor">White</Color>
+      <SolidColorBrush x:Key="HelpStrokeBrush" Color="{StaticResource HelpStrokeColor}" />
+      <Color x:Key="HelpFillColor">#5F8DD3</Color>
+      <SolidColorBrush x:Key="HelpFillBrush" Color="{StaticResource HelpFillColor}" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="56" />
+    </Grid.RowDefinitions>
+    <Grid Grid.Row="0" Background="{StaticResource ClinicalWarningColor}" Height="25" Visibility="{Binding ShowClinicalWarning, ElementName=This, Converter={StaticResource BoolToVisibility}}">
+      <TextBlock Text="NOT FOR CLINICAL USE" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+    </Grid>
+    <Grid Grid.Row="1" Background="{StaticResource MichiganBlue}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Image Grid.Column="0" Margin="10" Source="{Binding SignatureLogo, ElementName=This}" Visibility="{Binding UseSignatureLogo, ElementName=This, Converter={StaticResource BoolToVisibility}}" />
+      <Grid Grid.Column="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <FrameworkElement.Style>
+          <Style TargetType="{x:Type Grid}">
+            <Setter Property="Visibility" Value="Collapsed" />
+            <Style.Triggers>
+              <DataTrigger Value="False" Binding="{Binding UseSignatureLogo, ElementName=This}">
+                <Setter Property="Visibility" Value="Visible" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </FrameworkElement.Style>
+        <Image Grid.Column="0" Source="umich-logo.png" />
+        <Border Grid.Column="1" BorderBrush="#FFFFFFFF" BorderThickness="1,0,0,0" Margin="0,10,0,10" Padding="10,0,0,0">
+          <StackPanel>
+            <TextBlock FontSize="24" Margin="0,-8,0,0">
+              <Run Text="{Binding ProductName, ElementName=This}" />
+            </TextBlock>
+            <TextBlock FontSize="12" Margin="0,-2,0,0">
+              <Run Text="UNIVERSITY OF MICHIGAN HEALTH SYSTEM" />
+            </TextBlock>
+          </StackPanel>
+        </Border>
+      </Grid>
+      <Grid Grid.Column="1">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Style="{StaticResource CourseOrPlanSpaceColumn}" />
+            <ColumnDefinition Style="{StaticResource CourseOrPlanColumn}" />
+            <ColumnDefinition Style="{StaticResource CourseOrPlanSpaceColumn}" />
+            <ColumnDefinition Style="{StaticResource CourseOrPlanColumn}" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <FrameworkElement.Style>
+            <Style TargetType="{x:Type Grid}">
+              <Setter Property="Visibility" Value="Visible" />
+              <Style.Triggers>
+                <DataTrigger Value="Visible" Binding="{Binding Visibility, ElementName=CompactLayout}">
+                  <Setter Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </FrameworkElement.Style>
+          <Control Name="Space" Grid.Column="0" HorizontalAlignment="Stretch" />
+          <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="10">
+            <Run Text="Patient:" FontWeight="Bold" /> <Run><Run.Text><MultiBinding StringFormat="{}{1}, {0}"><Binding Path="PatientFirstName" ElementName="This" /><Binding Path="PatientLastName" ElementName="This" /></MultiBinding></Run.Text></Run> (<Run Text="{Binding PatientId, ElementName=This}" />)</TextBlock>
+          <TextBlock Grid.Column="3" VerticalAlignment="Center" Margin="10">
+            <Run Text="Course:" FontWeight="Bold" /> <Run Text="{Binding Course, ElementName=This}" /></TextBlock>
+          <TextBlock Grid.Column="5" VerticalAlignment="Center" Margin="10">
+            <Run Text="Plan:" FontWeight="Bold" /> <Run Text="{Binding Plan, ElementName=This}" /></TextBlock>
+        </Grid>
+        <StackPanel Name="CompactLayout" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+          <FrameworkElement.Style>
+            <Style TargetType="{x:Type StackPanel}">
+              <Setter Property="Visibility" Value="Collapsed" />
+              <Style.Triggers>
+                <DataTrigger Value="0" Binding="{Binding ActualWidth, ElementName=Space}">
+                  <Setter Property="Visibility" Value="Visible" />
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </FrameworkElement.Style>
+          <TextBlock>
+            <Run Text="Patient:" FontWeight="Bold" /> <Run><Run.Text><MultiBinding StringFormat="{}{1}, {0}"><Binding Path="PatientFirstName" ElementName="This" /><Binding Path="PatientLastName" ElementName="This" /></MultiBinding></Run.Text></Run> (<Run Text="{Binding PatientId, ElementName=This}" />)</TextBlock>
+          <TextBlock Visibility="{Binding ShowCourseAndPlan, ElementName=This, Converter={StaticResource BoolToVisibility}}">
+            <Run Text="Course/Plan:" FontWeight="Bold" /> <Run Text="{Binding Course, ElementName=This}" />/<Run Text="{Binding Plan, ElementName=This}" /></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="10">
+          <TextBlock>
+            <Run Text="User:" FontWeight="Bold" /> <Run Text="{Binding UserName, ElementName=This}" /></TextBlock>
+          <TextBlock>
+            <Run Text="Version:" FontWeight="Bold" /> <Run Text="{Binding ProductVersion, ElementName=This}" /></TextBlock>
+        </StackPanel>
+        <Grid Grid.Column="2">
+          <Button Content="?" FontSize="18" FontWeight="Bold" Width="28" Height="28" Margin="10" Click="OpenHelp">
+            <Control.Template>
+              <ControlTemplate TargetType="{x:Type Button}">
+                <Grid>
+                  <Ellipse StrokeThickness="3">
+                    <Shape.Stroke>
+                      <SolidColorBrush x:Name="StrokeBrush" Color="{StaticResource HelpStrokeColor}" />
+                    </Shape.Stroke>
+                    <Shape.Fill>
+                      <SolidColorBrush x:Name="FillBrush" Color="{StaticResource HelpFillColor}" />
+                    </Shape.Fill>
+                  </Ellipse>
+                  <ContentPresenter Margin="0,-1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                  <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="CommonStates">
+                      <VisualState Name="Normal" />
+                      <VisualState Name="MouseOver">
+                        <Storyboard>
+                          <ColorAnimation Storyboard.TargetName="StrokeBrush" Storyboard.TargetProperty="Color" To="{StaticResource HelpFillColor}" Duration="0:0:0" />
+                          <ColorAnimation Storyboard.TargetName="FillBrush" Storyboard.TargetProperty="Color" To="{StaticResource HelpStrokeColor}" Duration="0:0:0" />
+                        </Storyboard>
+                      </VisualState>
+                      <VisualState Name="Pressed" />
+                    </VisualStateGroup>
+                  </VisualStateManager.VisualStateGroups>
+                </Grid>
+              </ControlTemplate>
+            </Control.Template>
+            <FrameworkElement.Style>
+              <Style TargetType="{x:Type Button}">
+                <Setter Property="Foreground" Value="{StaticResource HelpStrokeBrush}" />
+                <Style.Triggers>
+                  <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource HelpFillBrush}" />
+                  </Trigger>
+                  <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource HelpStrokeBrush}" />
+                  </Trigger>
+                </Style.Triggers>
+              </Style>
+            </FrameworkElement.Style>
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
+  </Grid>
+</UserControl>

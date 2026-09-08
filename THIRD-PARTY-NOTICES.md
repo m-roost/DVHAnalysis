@@ -21,6 +21,7 @@ Last reviewed: 2026-09-08.
 | [YamlDotNet](https://github.com/aaubry/YamlDotNet) | 3.9.0 | MIT | UMRO.DvhAnalysis.Runner (development helper only) |
 | [CommonServiceLocator](https://github.com/unitycontainer/commonservicelocator) | 1.3 | Ms-PL (Microsoft Public License) | UMRO.DvhAnalysis.Runner, pulled in by MvvmLight and EclipsePlugInRunner (development helper only) |
 | [NUnit](https://nunit.org/) | 3.0.1 | MIT | DVHAnalysis.UnitTests (tests only) |
+| [Newtonsoft.Json](https://www.newtonsoft.com/json) | 13.0.3 | MIT | UMRO.Aria.Access.Rest |
 
 Note on CommonServiceLocator: the Free Software Foundation considers the Ms-PL license incompatible with the
 GPL. It is only used by the Runner development helper, which is not part of the plugin deployed to Eclipse and
@@ -45,17 +46,14 @@ proprietary software of Varian Medical Systems and subject to Varian's license t
 included in this repository and must not be committed to it.** Users must supply the assemblies from their own
 licensed Eclipse / ESAPI installation. See the [Developer Guide](./Doc/Developer_Guide.md#build-the-code).
 
-## University of Michigan components distributed as binaries
+## University of Michigan helper libraries (source recovered from binaries)
 
-The following assemblies in [dvhanalysisgui/resources/](./dvhanalysisgui/resources/) were developed by the
+The projects `UMRO.Aria.Access.Rest`, `UMRO.Aria.Documents`, `UMRO.Utils.DVHViewer` and
+`UMRO.Utils.FlexibleTitleBar` under [dvhanalysisgui/src/](./dvhanalysisgui/src/) were developed by the
 Department of Radiation Oncology, University of Michigan, and are copyright The Regents of the University of
-Michigan. They are licensed under the same GPL-3.0 terms as the rest of this repository.
-
-| Assembly | Version |
-|---|---|
-| UMRO.Aria.Documents.dll | 1.0.0.0 |
-| UMRO.Utils.DVHViewer-0.9.3.0.dll | 0.9.3.0 |
-| UMRO.Utils.FlexibleTitleBar-1.3.0.0.dll | 1.3.0.0 |
+Michigan. Their original source was lost; the source in this repository was recovered by decompiling the
+compiled assemblies (see the note at the top of each file). They are licensed under the same GPL-3.0 terms as
+the rest of this repository and are built from source; no pre-compiled binaries are distributed.
 
 ## .NET Framework
 
