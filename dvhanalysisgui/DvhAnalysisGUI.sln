@@ -39,9 +39,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Utils.FlexibleTitleBar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Aria.Access.Rest", "src\UMRO.Aria.Access.Rest\UMRO.Aria.Access.Rest.csproj", "{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Utils.DVHViewer", "src\UMRO.Utils.DVHViewer\UMRO.Utils.DVHViewer.csproj", "{6F99536E-1F5A-4C85-834A-1623F15E1D6A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Aria.Documents", "src\UMRO.Aria.Documents\UMRO.Aria.Documents.csproj", "{E97D7799-A918-4DCA-B78B-374911FEEF37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Utils.DVHViewer", "src\UMRO.Utils.DVHViewer\UMRO.Utils.DVHViewer.csproj", "{6F99536E-1F5A-4C85-834A-1623F15E1D6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,14 +147,6 @@ Global
 		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|x64.ActiveCfg = Release|x64
 		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|x64.Build.0 = Release|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.ActiveCfg = Debug|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.Build.0 = Debug|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.ActiveCfg = Release|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.Build.0 = Release|x64
 		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|x64.ActiveCfg = Debug|x64
@@ -163,12 +155,17 @@ Global
 		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|x64.ActiveCfg = Release|x64
 		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|x64.Build.0 = Release|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.ActiveCfg = Debug|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.Build.0 = Debug|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.ActiveCfg = Release|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A} = {3CDA9A6F-983A-4D64-B81C-D9E6D2115C51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9809922-4AA8-4771-84FD-E002D69EE784}
