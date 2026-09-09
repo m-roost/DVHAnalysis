@@ -46,14 +46,13 @@ proprietary software of Varian Medical Systems and subject to Varian's license t
 included in this repository and must not be committed to it.** Users must supply the assemblies from their own
 licensed Eclipse / ESAPI installation. See the [Developer Guide](./Doc/Developer_Guide.md#build-the-code).
 
-## University of Michigan helper libraries (source recovered from binaries)
+## University of Michigan helper libraries
 
 The projects `UMRO.Aria.Access.Rest`, `UMRO.Aria.Documents`, `UMRO.Utils.DVHViewer` and
 `UMRO.Utils.FlexibleTitleBar` under [dvhanalysisgui/src/](./dvhanalysisgui/src/) were developed by the
 Department of Radiation Oncology, University of Michigan, and are copyright The Regents of the University of
-Michigan. Their original source was lost; the source in this repository was recovered by decompiling the
-compiled assemblies (see the note at the top of each file). They are licensed under the same GPL-3.0 terms as
-the rest of this repository and are built from source; no pre-compiled binaries are distributed.
+Michigan. They are licensed under the same GPL-3.0 terms as the rest of this repository and are built from
+source; no pre-compiled binaries are distributed.
 
 ## .NET Framework
 

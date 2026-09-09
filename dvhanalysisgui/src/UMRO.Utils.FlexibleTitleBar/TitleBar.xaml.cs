@@ -1,8 +1,4 @@
-﻿// NOTE: The original source code of this component was lost. This file was recovered from the
-// compiled assembly UMRO.Utils.FlexibleTitleBar-1.3.0.0.dll (version 1.3.0.0) by decompilation (ILSpy) in September 2026.
-// Copyright (C) The Regents of the University of Michigan. Licensed under GPL-3.0 (see LICENSE.txt).
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;

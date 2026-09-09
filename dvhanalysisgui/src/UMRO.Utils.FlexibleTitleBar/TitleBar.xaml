@@ -55,7 +55,7 @@
             </Style.Triggers>
           </Style>
         </FrameworkElement.Style>
-        <Image Grid.Column="0" Source="umich-logo.png" />
+        <Image Grid.Column="0" Source="placeholder-logo.png" />
         <Border Grid.Column="1" BorderBrush="#FFFFFFFF" BorderThickness="1,0,0,0" Margin="0,10,0,10" Padding="10,0,0,0">
           <StackPanel>
             <TextBlock FontSize="24" Margin="0,-8,0,0">
