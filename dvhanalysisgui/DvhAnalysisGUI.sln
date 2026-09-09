@@ -15,14 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.DvhAnalysis.AriaDb", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.DvhAnalysis.AriaDb.Sql", "src\UMRO.DvhAnalysis.AriaDb.Sql\UMRO.DvhAnalysis.AriaDb.Sql.csproj", "{ED6683AF-BA83-4BF4-A352-46C3C94B8803}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Aria.Access.Rest", "src\UMRO.Aria.Access.Rest\UMRO.Aria.Access.Rest.csproj", "{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Aria.Documents", "src\UMRO.Aria.Documents\UMRO.Aria.Documents.csproj", "{E97D7799-A918-4DCA-B78B-374911FEEF37}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Utils.DVHViewer", "src\UMRO.Utils.DVHViewer\UMRO.Utils.DVHViewer.csproj", "{6F99536E-1F5A-4C85-834A-1623F15E1D6A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Utils.FlexibleTitleBar", "src\UMRO.Utils.FlexibleTitleBar\UMRO.Utils.FlexibleTitleBar.csproj", "{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3CDA9A6F-983A-4D64-B81C-D9E6D2115C51}"
 	ProjectSection(SolutionItems) = preProject
 		..\Doc\Developer_Guide.md = ..\Doc\Developer_Guide.md
@@ -31,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\Directory.Build.user.props.example = ..\Directory.Build.user.props.example
 		..\README.md = ..\README.md
 		Readme_For_Developer.txt = Readme_For_Developer.txt
+		src\UMRO.Aria.Documents\UMRO.Aria.Documents.csproj = src\UMRO.Aria.Documents\UMRO.Aria.Documents.csproj
 		..\Doc\Version_Tracking.md = ..\Doc\Version_Tracking.md
 	EndProjectSection
 EndProject
@@ -41,6 +34,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVHAnalysis.UnitTests", "..\dvhanalysislib\DVHAnalysis.UnitTests\DVHAnalysis.UnitTests.csproj", "{03FFCABE-17E4-43EB-8973-EE4168483C06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptConnectionString", "..\EncryptConnectionString\EncryptConnectionString.csproj", "{36BA009A-C894-4B2D-9BDD-3B7458776A6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Utils.FlexibleTitleBar", "src\UMRO.Utils.FlexibleTitleBar\UMRO.Utils.FlexibleTitleBar.csproj", "{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Aria.Access.Rest", "src\UMRO.Aria.Access.Rest\UMRO.Aria.Access.Rest.csproj", "{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Utils.DVHViewer", "src\UMRO.Utils.DVHViewer\UMRO.Utils.DVHViewer.csproj", "{6F99536E-1F5A-4C85-834A-1623F15E1D6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMRO.Aria.Documents", "src\UMRO.Aria.Documents\UMRO.Aria.Documents.csproj", "{E97D7799-A918-4DCA-B78B-374911FEEF37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -130,30 +131,6 @@ Global
 		{36BA009A-C894-4B2D-9BDD-3B7458776A6D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{36BA009A-C894-4B2D-9BDD-3B7458776A6D}.Release|x64.ActiveCfg = Release|Any CPU
 		{36BA009A-C894-4B2D-9BDD-3B7458776A6D}.Release|x64.Build.0 = Release|Any CPU
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|x64.ActiveCfg = Debug|x64
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|x64.Build.0 = Debug|x64
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|x64.ActiveCfg = Release|x64
-		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|x64.Build.0 = Release|x64
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|x64.ActiveCfg = Debug|x64
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|x64.Build.0 = Debug|x64
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|x64.ActiveCfg = Release|x64
-		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|x64.Build.0 = Release|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.ActiveCfg = Debug|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.Build.0 = Debug|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.ActiveCfg = Release|x64
-		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.Build.0 = Release|x64
 		{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}.Debug|x64.ActiveCfg = Debug|x64
@@ -162,9 +139,36 @@ Global
 		{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}.Release|x64.ActiveCfg = Release|x64
 		{E98053E9-7E5A-4DE7-A234-50E4E16CC86F}.Release|x64.Build.0 = Release|x64
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|x64.ActiveCfg = Debug|x64
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Debug|x64.Build.0 = Debug|x64
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|x64.ActiveCfg = Release|x64
+		{6A6648E0-40E9-4AF4-897C-5A54D04BB3F5}.Release|x64.Build.0 = Release|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.ActiveCfg = Debug|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Debug|x64.Build.0 = Debug|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.ActiveCfg = Release|x64
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A}.Release|x64.Build.0 = Release|x64
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|x64.ActiveCfg = Debug|x64
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Debug|x64.Build.0 = Debug|x64
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|x64.ActiveCfg = Release|x64
+		{E97D7799-A918-4DCA-B78B-374911FEEF37}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F99536E-1F5A-4C85-834A-1623F15E1D6A} = {3CDA9A6F-983A-4D64-B81C-D9E6D2115C51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9809922-4AA8-4771-84FD-E002D69EE784}
