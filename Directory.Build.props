@@ -1,0 +1,23 @@
+<Project>
+
+  <!-- Machine-local overrides (gitignored). Copy Directory.Build.user.props.example to
+       Directory.Build.user.props and set EsapiReferencePath for your machine. Imported first
+       so it can pre-set the property before the default below applies. -->
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Build.user.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.user.props')" />
+
+  <PropertyGroup>
+    <!-- Single place to point every project at the Varian ESAPI reference assemblies
+         (VMS.TPS.Common.Model.API / VMS.TPS.Common.Model.Types). Used by the <HintPath> of the
+         ESAPI <Reference> entries in the .csproj files. Precedence:
+           1. Directory.Build.user.props  (imported above)
+           2. environment variable ESAPI_REFERENCE_PATH
+           3. the default network share below
+         NOTE: HintPath is compile-time only; at runtime Eclipse loads its own in-process ESAPI,
+         so this only affects what the projects compile against. Thick-client developers may point
+         this at their local GAC / Varian install to compile against the exact installed version. -->
+    <EsapiReferencePath Condition="'$(EsapiReferencePath)' == '' and '$(ESAPI_REFERENCE_PATH)' != ''">$(ESAPI_REFERENCE_PATH)</EsapiReferencePath>
+    <EsapiReferencePath Condition="'$(EsapiReferencePath)' == ''">C:\ESAPI\15.6.5.10</EsapiReferencePath>
+  </PropertyGroup>
+
+</Project>

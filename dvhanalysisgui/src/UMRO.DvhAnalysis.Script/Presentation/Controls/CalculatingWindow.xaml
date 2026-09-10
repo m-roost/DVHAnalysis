@@ -1,0 +1,94 @@
+﻿<Window
+    x:Class="UMRO.DvhAnalysis.Script.Presentation.Controls.CalculatingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Calculation Progress"
+    Width="600"
+    WindowStartupLocation="CenterScreen"
+    ShowInTaskbar="False"
+    ResizeMode="NoResize"
+    SizeToContent="Height"
+    FontSize="14"
+    >
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <BooleanToVisibilityConverter x:Key="VisibilityConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <StackPanel
+        Orientation="Vertical"
+        Margin="10"
+        >
+
+        <!-- Text above progress bar -->
+        <TextBlock
+            Text="{Binding ProgressText}"
+            />
+
+        <!-- Progress bar -->
+        <ProgressBar
+            Minimum="0"
+            Maximum="1"
+            Value="{Binding Progress}"
+            Height="24"
+            Margin="0,5,0,0"
+            />
+
+        <!-- Notification list and OK button -->
+        <StackPanel
+            Orientation="Vertical"
+            Visibility="{Binding HasNotifications,
+                         Converter={StaticResource VisibilityConverter}}"
+            Margin="0,5,0,0"
+            >
+
+            <!-- Text above notification list -->
+            <TextBlock
+                Text="Notifications during calculation:"
+                />
+
+            <!-- Notification list -->
+            <!-- Disabling the horizontal scroll bar is necessary
+                 to allow text wrapping -->
+            <ListBox
+                Name="NotificationListView"
+                Height="200"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                Margin="0,5,0,0"
+                >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock
+                            Text="{Binding}"
+                            TextWrapping="Wrap"
+                            Margin="5"
+                            />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+                <!-- Disable selection of items -->
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Focusable" Value="False" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+            <!-- OK button -->
+            <Button
+                Content="OK"
+                Click="OkButtonClick"
+                IsEnabled="{Binding IsFinished}"
+                HorizontalAlignment="Right"
+                Width="96" Height="32"
+                Margin="0,5,0,0"
+                />
+        </StackPanel>
+    </StackPanel>
+</Window>

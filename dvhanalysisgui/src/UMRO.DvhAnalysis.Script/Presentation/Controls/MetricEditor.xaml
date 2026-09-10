@@ -1,0 +1,535 @@
+﻿<Window x:Class="UMRO.DvhAnalysis.Script.Presentation.Controls.MetricEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:v="clr-namespace:VMS.TPS.Common.Model.Types;assembly=VMS.TPS.Common.Model.Types"
+        xmlns:controls="clr-namespace:UMRO.DvhAnalysis.Script.Presentation.ViewModels.Controls"
+        xmlns:l="clr-namespace:UMRO.DvhAnalysis.Script.Presentation.ViewModels.DVHModels"
+        xmlns:metrics="clr-namespace:UMRO.DvhAnalysis.Script.Presentation.ViewModels.Metrics"
+        Title="Metric Editor" Width="520" Height="720"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        FontSize="{DynamicResource FontSize}"
+        Background="{DynamicResource ControlLightBrush}"
+        DataContext="{DynamicResource ViewModel}"
+        Loaded="OnWindowLoaded">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources.xaml" />
+                <ResourceDictionary Source="../../Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Create the view model to use as DataContext -->
+            <controls:MetricEditorViewModel x:Key="ViewModel" />
+
+            <!-- Defines a button style for the list box -->
+            <Style x:Key="ListButton" TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Width" Value="75" />
+                <Setter Property="Height" Value="32" />
+            </Style>
+
+            <!-- Defines a style to disable control if selected metric is null -->
+            <Style x:Key="DisableIfSelectedMetricIsNull"
+                   TargetType="{x:Type FrameworkElement}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding SelectedDVHMetricSetup, Source={StaticResource ViewModel}}"
+                                 Value="{x:Null}">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Defines a style to make text box read only
+                 if auto name checkbox is checked -->
+            <Style x:Key="IsReadOnlyIfAutoNameIsChecked" TargetType="{x:Type TextBox}"
+                   BasedOn="{StaticResource {x:Type TextBox}}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsChecked, ElementName=AutoNameCheckBox}"
+                                 Value="True">
+                        <Setter Property="IsReadOnly" Value="True" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Defines a style to disable control if DVH model type is bio-dose -->
+            <Style x:Key="DisableIfBioDose" TargetType="{x:Type RadioButton}"
+                   BasedOn="{StaticResource {x:Type RadioButton}}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=., Converter={StaticResource TypeConverter}}"
+                 Value="{x:Type l:LQBioDoseDVHModelViewModel}">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Path=., Converter={StaticResource TypeConverter}}"
+                 Value="{x:Type l:LQLBioDoseDVHModelViewModel}">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Defines a style for a parameter label -->
+            <Style x:Key="ParameterLabel" TargetType="{x:Type Label}">
+                <Setter Property="Margin" Value="{StaticResource TopSpace}" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+            </Style>
+
+            <!-- Defines a style for simple parameter text box -->
+            <Style x:Key="ParameterTextBox"
+                   TargetType="{x:Type TextBox}"
+                   BasedOn="{StaticResource {x:Type TextBox}}">
+                <Setter Property="Margin" Value="{StaticResource TopSpace}" />
+                <Setter Property="Width" Value="60" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!-- Window panel -->
+    <Grid Margin="{StaticResource BorderSpace}">
+        <Grid.RowDefinitions>
+            <RowDefinition />                  <!-- Main contents -->
+            <RowDefinition Height="Auto" />    <!-- Separator line -->
+            <RowDefinition Height="Auto" />    <!-- OK and Cancel buttons -->
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="210"  />    <!-- Left panel (list of metrics) -->
+                <ColumnDefinition Width="*" />       <!-- Right panel (metric editor) -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Left panel (list of metrics) -->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />    <!-- Header -->
+                    <RowDefinition Height="*" />       <!-- List box of metrics -->
+                    <RowDefinition Height="Auto" />    <!-- Add and Remove buttons -->
+                </Grid.RowDefinitions>
+
+                <!-- Metrics list header -->
+                <Label Grid.Row="0" Content="Metrics"
+                       Style="{StaticResource SectionHeader}" />
+
+                <!-- List of metrics -->
+                <ListBox Grid.Row="1" Margin="{StaticResource TopLargeSpace}"
+                         ItemsSource="{Binding DVHMetricSetups}"
+                         SelectedItem="{Binding SelectedDVHMetricSetup}"
+                         DisplayMemberPath="Name">
+
+                     <!-- This solves a weird binding error that couldn't be solved in Theme.xaml
+                          (ListBoxItem cannot find its parent ItemsControl alignment properties) -->
+                     <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                     </ListBox.ItemContainerStyle>
+
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name, StringFormat=\{0\} Metrics}"
+                                               Foreground="{StaticResource ControlDarkBrush}"
+                                               FontWeight="Bold" />
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                </ListBox>
+
+                <!-- Add and Remove buttons -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal"
+                            Margin="{StaticResource TopSpace}">
+
+                    <!-- Add button -->
+                    <Button Content="Add"
+                            Style="{StaticResource ListButton}"
+                            Command="{Binding AddMetricCommand}" />
+
+                    <!-- Remove button -->
+                    <Button Content="Remove" Margin="{StaticResource LeftSpace}"
+                            Style="{StaticResource ListButton}"
+                            Command="{Binding RemoveMetricCommand}" />
+                </StackPanel>
+
+            <!-- List of metrics -->
+            </Grid>
+
+            <!-- Right panel (metric editor) -->
+            <StackPanel Grid.Column="1" Orientation="Vertical"
+                        Margin="{StaticResource LeftLargeSpace}"
+                        Style="{StaticResource DisableIfSelectedMetricIsNull}"
+                        DataContext="{Binding SelectedDVHMetricSetup}">
+
+                <!-- General Properties label -->
+                <Label Grid.Row="0" Content="General Properties"
+                       Style="{StaticResource SectionHeader}" />
+
+                <!-- Name and description -->
+                <StackPanel Orientation="Vertical"
+                            Margin="{StaticResource TopLargeSpace}">
+
+                    <!-- Metric name -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />  <!-- Label -->
+                            <ColumnDefinition Width="*"    />  <!-- Name text box -->
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Content="Name:" />
+
+                        <TextBox Grid.Column="1"
+                                 Margin="{StaticResource LeftSpace}"
+                                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource IsReadOnlyIfAutoNameIsChecked}" />
+                    </Grid>
+
+                    <!-- Auto name check box -->
+                    <CheckBox Margin="{StaticResource TopSpace}"
+                              Content="Generate name automatically"
+                              IsChecked="{Binding IsAutoName}" />
+
+                    <!-- Metric description -->
+                    <StackPanel Orientation="Vertical"
+                                Margin="{StaticResource TopLargeSpace}">
+
+                        <Label Content="Description:" />
+
+                        <TextBox Text="{Binding Description}"
+                                 Margin="{StaticResource TopSpace}"
+                                 Height="64" TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"
+                                 VerticalContentAlignment="Top" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Metric and DVH Model properties -->
+                <UserControl Margin="{StaticResource TopLargeSpace}">
+                    <StackPanel>
+
+                        <!-- Metric Properties label -->
+                        <Label Content="Metric Properties"
+                               Style="{StaticResource SectionHeader}" />
+
+                        <!-- Metric type -->
+                        <Grid Margin="{StaticResource TopLargeSpace}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" /> <!-- Label -->
+                                <ColumnDefinition Width="*"    /> <!-- Combo box of metrics -->
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Content="Metric type:" />
+
+                            <!-- List of metrics to choose from -->
+                            <!-- TODO: Need a converter from type to string -->
+                            <ComboBox Grid.Column="1" Margin="{StaticResource LeftSpace}"
+                                      VerticalContentAlignment="Center"
+                                      ItemsSource="{Binding AllMetricTypes, Source={StaticResource ViewModel}}"
+                                      SelectedItem="{Binding SelectedMetricType, Source={StaticResource ViewModel}}" />
+                        </Grid>
+
+                        <!-- Specific metric parameters -->
+                        <!-- Choose the correct DataTemplate based on the Metric type -->
+                        <UserControl DataContext="{Binding MetricViewModel}"
+                                     Margin="{StaticResource TopLargeSpace}">
+                            <UserControl.Resources>
+                                <DataTemplate DataType="{x:Type metrics:MeanDoseMetricViewModel}"></DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:MinDoseMetricViewModel}"></DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:MaxDoseMetricViewModel}"></DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:StdDevDoseMetricViewModel}"></DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:DoseToVolumeMetricViewModel}">
+                                    <!-- Amount of volume -->
+                                    <UniformGrid Rows="1" Columns="2">
+                                        <Label Content="Volume:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                                            <TextBox Text="{Binding Volume}"
+                                                     Style="{StaticResource ParameterTextBox}" />
+                                            <TextBlock Margin="{StaticResource LeftSpace}"
+                                                       Height="18">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Text" Value="%" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsChecked, ElementName=VolumeIsAbsolute}"
+                                                                         Value="True">
+                                                                <Setter Property="Text" Value="cc" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </UniformGrid>
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:VolumeWithDoseMetricViewModel}">
+                                    <!-- Amount of dose -->
+                                    <UniformGrid Rows="1" Columns="2">
+                                        <Label Content="Dose:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                                            <TextBox Text="{Binding Dose}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+                                            <TextBlock Margin="{StaticResource LeftSpace}"
+                                                       Height="18">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Text" Value="%" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsChecked, ElementName=DoseIsAbsolute}"
+                                                                         Value="True">
+                                                                <Setter Property="Text" Value="Gy" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </UniformGrid>
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:ColdVolumeWithDoseMetricViewModel}">
+                                    <!-- Amount of dose -->
+                                    <UniformGrid Rows="1" Columns="2">
+                                        <Label Content="Dose:"
+                                           Style="{StaticResource ParameterLabel}" />
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                                            <TextBox Text="{Binding Dose}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+                                            <TextBlock Margin="{StaticResource LeftSpace}"
+                                                       Height="18">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Text" Value="%" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsChecked, ElementName=DoseIsAbsolute}"
+                                                                         Value="True">
+                                                                <Setter Property="Text" Value="Gy" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </UniformGrid>
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:DoseComplementToVolumeMetricViewModel}">
+                                    <!-- Amount of volume -->
+                                    <UniformGrid Rows="1" Columns="2">
+                                        <Label Content="Volume:"
+                                           Style="{StaticResource ParameterLabel}" />
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                                            <TextBox Text="{Binding Volume}"
+                                                     Style="{StaticResource ParameterTextBox}" />
+                                            <TextBlock Margin="{StaticResource LeftSpace}"
+                                                       Height="18">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Text" Value="%" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsChecked, ElementName=VolumeIsAbsolute}"
+                                                                         Value="True">
+                                                                <Setter Property="Text" Value="cc" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </UniformGrid>
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:NTCPMetricViewModel}">
+                                    <UniformGrid Rows="3" Columns="2">
+                                        <!-- LKBn -->
+                                        <Label Content="n:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <TextBox Text="{Binding LKBn}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+
+                                        <!-- LKBm -->
+                                        <Label Content="m:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <TextBox Text="{Binding LKBm}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+
+                                        <!-- LKBD50 -->
+                                        <Label Content="TD50:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <TextBox Text="{Binding LKBD50}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+                                    </UniformGrid>
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type metrics:EUDMetricViewModel}">
+                                    <!-- a -->
+                                    <UniformGrid Rows="1" Columns="2">
+                                        <Label Content="a:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <TextBox Text="{Binding a}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+                                    </UniformGrid>
+                                </DataTemplate>
+                            </UserControl.Resources>
+
+                            <UserControl.Template>
+                                <ControlTemplate TargetType="{x:Type UserControl}">
+                                    <ContentPresenter Content="{Binding}" />
+                                </ControlTemplate>
+                            </UserControl.Template>
+                        </UserControl>
+
+                        <!-- DVH Model Properties label -->
+                        <Label Content="DVH Model Properties"
+                               Margin="{StaticResource TopLargeSpace}"
+                               Style="{StaticResource SectionHeader}" />
+
+                        <!-- DVH Model type -->
+                        <Grid Margin="{StaticResource TopLargeSpace}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" /> <!-- Label -->
+                                <ColumnDefinition Width="*"    /> <!-- Combo box of DVH models -->
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Content="DVH model type:" />
+
+                            <!-- List of DVH models to choose from -->
+                            <!-- TODO: Need a converter from type to string -->
+                            <ComboBox Grid.Column="1" Margin="{StaticResource LeftSpace}"
+                                      VerticalContentAlignment="Center"
+                                      ItemsSource="{Binding AllDVHModelTypes, Source={StaticResource ViewModel}}"
+                                      SelectedItem="{Binding SelectedDVHModelType, Source={StaticResource ViewModel}}"
+                                      DropDownClosed="OnDVHModelTypeComboBoxDropDownClosed" />
+                        </Grid>
+
+                        <!-- Dose and volume types -->
+                        <Grid DataContext="{Binding DVHModelViewModel}"
+                              Margin="{StaticResource TopLargeSpace}">
+
+                              <Grid.Style>
+                                <!-- Hide if metric type is NTCP or EUD -->
+                                <Style TargetType="Grid">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding DataContext.MetricViewModel,
+                                            RelativeSource={RelativeSource FindAncestor, AncestorType=StackPanel},
+                                            Converter={StaticResource TypeConverter}}" Value="{x:Type metrics:NTCPMetricViewModel}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding DataContext.MetricViewModel,
+                                            RelativeSource={RelativeSource FindAncestor, AncestorType=StackPanel},
+                                            Converter={StaticResource TypeConverter}}" Value="{x:Type metrics:EUDMetricViewModel}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition /> <!-- Dose type -->
+                                <ColumnDefinition /> <!-- Volume type -->
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Dose type -->
+                            <StackPanel Grid.Column="0" Orientation="Vertical">
+
+                                <Label Content="Dose type:" />
+
+                                <!-- Absolute radio button -->
+                                <RadioButton Name="DoseIsAbsolute" Content="Absolute"
+                                             Margin="{StaticResource TopSpace}"
+                                             IsChecked="{Binding DoseType,
+                                                 Converter={StaticResource EnumToBoolConverter},
+                                                 ConverterParameter={x:Static v:DoseValuePresentation.Absolute}}" />
+
+                                <!-- Relative radio button -->
+                                <RadioButton Content="Relative"
+                                             IsChecked="{Binding DoseType,
+                                                 Converter={StaticResource EnumToBoolConverter},
+                                                 ConverterParameter={x:Static v:DoseValuePresentation.Relative}}"
+                                             Style="{StaticResource DisableIfBioDose}" />
+                            </StackPanel>
+
+                            <!-- Volume type -->
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+
+                                <Label Content="Volume type:" />
+
+                                <!-- Absolute radio button -->
+                                <RadioButton Name="VolumeIsAbsolute" Content="Absolute"
+                                             Margin="{StaticResource TopSpace}"
+                                             IsChecked="{Binding VolumeType,
+                                                 Converter={StaticResource EnumToBoolConverter},
+                                                 ConverterParameter={x:Static v:VolumePresentation.AbsoluteCm3}}" />
+
+                                <!-- Relative radio button -->
+                                <RadioButton Content="Relative"
+                                             IsChecked="{Binding VolumeType,
+                                                 Converter={StaticResource EnumToBoolConverter},
+                                                 ConverterParameter={x:Static v:VolumePresentation.Relative}}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <!-- Specific DVH model parameters -->
+                        <!-- Choose the correct DataTemplate based on the DVH model type -->
+                        <UserControl DataContext="{Binding DVHModelViewModel}"
+                                     Margin="{StaticResource TopLargeSpace}">
+                            <UserControl.Resources>
+                                <DataTemplate DataType="{x:Type l:StandardDVHModelViewModel}"></DataTemplate>
+                                <DataTemplate DataType="{x:Type l:LQBioDoseDVHModelViewModel}">
+                                    <UniformGrid Rows="1" Columns="2">
+                                        <!-- Alpha/beta -->
+                                        <Label Content="&#945;/&#946;:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <TextBox Text="{Binding AlphaBeta}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+                                    </UniformGrid>
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type l:LQLBioDoseDVHModelViewModel}">
+                                    <UniformGrid Rows="2" Columns="2">
+                                        <!-- Alpha/beta -->
+                                        <Label Content="&#945;/&#946;:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <TextBox Text="{Binding AlphaBeta}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+
+                                        <!-- DT -->
+                                        <Label Content="DT:"
+                                               Style="{StaticResource ParameterLabel}" />
+                                        <TextBox Text="{Binding DT}"
+                                                 Style="{StaticResource ParameterTextBox}" />
+                                    </UniformGrid>
+                                </DataTemplate>
+                            </UserControl.Resources>
+
+                            <UserControl.Template>
+                                <ControlTemplate TargetType="{x:Type UserControl}">
+                                    <ContentPresenter Content="{Binding}" />
+                                </ControlTemplate>
+                            </UserControl.Template>
+                        </UserControl>
+
+                    </StackPanel>
+                </UserControl>
+            </StackPanel>  <!-- Right panel -->
+
+        </Grid> <!-- Main contents -->
+
+        <Separator Grid.Row="1" Margin="{StaticResource TopBottomLargeSpace}" />
+        
+        <!-- OK and Cancel buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+
+            <!-- OK button -->
+            <Button Content="OK"
+                    Style="{StaticResource DialogButton}"
+                    Click="OK_Button_Click" />
+
+            <!-- Cancel button -->
+            <Button Content="Cancel" Margin="{StaticResource LeftSpace}"
+                    Style="{StaticResource DialogButton}"
+                    IsCancel="True" />
+        </StackPanel>
+    </Grid>
+</Window>

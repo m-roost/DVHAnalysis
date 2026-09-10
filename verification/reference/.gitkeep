@@ -1,0 +1,2 @@
+# Ground-truth CSVs are generated here by dvh_groundtruth.py and are gitignored
+# (they derive from patient DICOM). Regenerate locally; see ../README.md.

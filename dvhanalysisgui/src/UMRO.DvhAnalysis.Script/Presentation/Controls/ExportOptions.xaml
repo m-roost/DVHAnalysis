@@ -1,0 +1,107 @@
+﻿<Window x:Class="UMRO.DvhAnalysis.Script.Presentation.Controls.ExportOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ExportOptions" Width="250" SizeToContent="Height"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources.xaml" />
+                <ResourceDictionary Source="../../Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="{StaticResource BorderSpace}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />    <!-- Options -->
+            <RowDefinition Height="Auto" />    <!-- Dialog buttons -->
+        </Grid.RowDefinitions>
+        
+        <!-- Export options -->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />  <!-- Header -->
+                <RowDefinition Height="*"    />  <!-- Export options -->
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Label Grid.Row="0" Content="Export options" Margin="0,5,0,0"
+                   Style="{StaticResource SectionHeader}" />
+
+            <!-- Export options -->
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,5,0,0">
+                <CheckBox Name="ExportQCCheckBox" Content="Export QC Analysis" IsChecked="False" />
+
+                <CheckBox Name="ExportDVHCheckBox" Content="Export DVH" IsChecked="False"
+                          Margin="0,5,0,0" />
+
+                <StackPanel Orientation="Vertical" Margin="25,5,0,0"
+                            IsEnabled="{Binding IsChecked, ElementName=ExportDVHCheckBox}">
+
+                    <Label Content="DVH Type" />
+
+                    <!-- DVH Type -->
+                    <StackPanel Orientation="Vertical" Margin="25,0,0,0">
+
+                        <!-- Cumulative -->
+                        <RadioButton Name="DVHTypeCumulative"
+                                     Content="Cumulative" GroupName="DVHType" />
+
+                        <!-- Direct -->
+                        <RadioButton Name="DVHTypeDirect"
+                                     Content="Direct" GroupName="DVHType" />
+                    </StackPanel>
+
+                    <Label Content="Dose Type" />
+
+                    <!-- Dose type -->
+                    <StackPanel Orientation="Vertical" Margin="25,0,0,0">
+
+                        <!-- Absolute -->
+                        <RadioButton Name="DVHDoseAbsolute"
+                                     Content="Absolute" GroupName="DoseType" />
+
+                        <!-- Relative -->
+                        <RadioButton Name="DVHDoseRelative"
+                                     Content="Relative" GroupName="DoseType" />
+                    </StackPanel>
+
+                    <Label Content="Volume Type" />
+
+                    <!-- Volume type -->
+                    <StackPanel Orientation="Vertical" Margin="25,0,0,0">
+
+                        <!-- Absolute -->
+                        <RadioButton Name="DVHVolumeAbsolute"
+                                     Content="Absolute" GroupName="VolumeType" />
+
+                        <!-- Relative -->
+                        <RadioButton Name="DVHVolumeRelative"
+                                     Content="Relative" GroupName="VolumeType" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Margin="{StaticResource TopLargeSpace}"
+                    Orientation="Vertical">
+            <Separator />
+
+            <StackPanel Grid.Row="1" Margin="{StaticResource TopSpace}"
+                        Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button Content="Export" IsDefault="True"
+                        HorizontalAlignment="Right"
+                        Width="100" Height="32"
+                        Click="Export_Button_Click"/>
+
+                <Button Margin="{StaticResource LeftSpace}"
+                        Content="Cancel" IsCancel="True"
+                        HorizontalAlignment="Right"
+                        Width="100" Height="32" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

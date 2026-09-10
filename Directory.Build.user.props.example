@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <!-- Copy this file to "Directory.Build.user.props" (gitignored) and set the folder that
+         contains VMS.TPS.Common.Model.API.dll and VMS.TPS.Common.Model.Types.dll on your machine.
+         This is the ONE place you need to change the ESAPI reference location for every project.
+         Examples:
+           - a local copy of the shared DLLs:   C:\ESAPI\15.6.5.10
+           - your machine's local GAC folder for the installed Eclipse version
+         Leaving this file absent uses the default share in Directory.Build.props. -->
+    <EsapiReferencePath>C:\ESAPI\15.6.5.10</EsapiReferencePath>
+  </PropertyGroup>
+</Project>

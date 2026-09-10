@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- $(EsapiReferencePath) (used by the ESAPI <Reference> HintPaths below) comes from the repo-root
+       Directory.Build.props, which is auto-imported via the Microsoft.CSharp.targets -> Common.targets
+       -> Common.props chain at the bottom of this file. See Directory.Build.props / SETUP.md. -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C719245F-4453-4AF3-9BA5-3FBC3C68515F}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMRO.DvhAnalysis.Script</RootNamespace>
+    <AssemblyName>DVHAnalysis-3.6.0.2.esapi</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowedReferenceRelatedFileExtensions>
+      .allowedextensions
+    </AllowedReferenceRelatedFileExtensions>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MigraDoc.DocumentObjectModel-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\MigraDoc.DocumentObjectModel-WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\MigraDoc.Rendering-WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\MigraDoc.RtfRendering-WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OxyPlot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OxyPlot.Core.1.0.0\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OxyPlot.Wpf.1.0.0\lib\net45\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\PdfSharp-WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\PdfSharp.Charting-WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="VMS.TPS.Common.Model.API, Version=1.0.450.29, Culture=neutral, PublicKeyToken=305b81e210ec4b89, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(EsapiReferencePath)\VMS.TPS.Common.Model.API.dll</HintPath>
+    </Reference>
+    <Reference Include="VMS.TPS.Common.Model.Types, Version=1.0.450.29, Culture=neutral, PublicKeyToken=305b81e210ec4b89, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(EsapiReferencePath)\VMS.TPS.Common.Model.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblySettings.cs" />
+    <Compile Include="DisplayDvh.cs" />
+    <Compile Include="DisplayDvhs.cs" />
+    <Compile Include="DisplayDvhType.cs" />
+    <Compile Include="DvhLineType.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="GetAncestor.cs" />
+    <Compile Include="PDFExport_SaveToDBWindow.cs" />
+    <Compile Include="Presentation\Commands\AddMetricRowCommand.cs" />
+    <Compile Include="Presentation\Commands\DeleteMetricRowCommand.cs" />
+    <Compile Include="Presentation\Commands\RelayCommand.cs" />
+    <Compile Include="Presentation\Controls\BioEvalReportDialog.xaml.cs">
+      <DependentUpon>BioEvalReportDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Controls\BioEvalReportDialogAction.cs" />
+    <Compile Include="Presentation\Controls\CalculatingWindow.xaml.cs">
+      <DependentUpon>CalculatingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Controls\ExportOptions.xaml.cs">
+      <DependentUpon>ExportOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Controls\InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Controls\SaveToDBWindow.xaml.cs">
+      <DependentUpon>SaveToDBWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Controls\SMPCMetricInput.xaml.cs">
+      <DependentUpon>SMPCMetricInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Controls\TemplateDialog.xaml.cs">
+      <DependentUpon>TemplateDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Controls\TemplateMatchingDialog.xaml.cs">
+      <DependentUpon>TemplateMatchingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Converters\MetricResultExcelConverter.cs" />
+    <Compile Include="Presentation\Converters\MetricViewModelTypeConverter.cs" />
+    <Compile Include="Presentation\MetricConfig.cs" />
+    <Compile Include="Presentation\UserMessager.cs" />
+    <Compile Include="Presentation\ViewModels\CalcNotificationEventArgs.cs" />
+    <Compile Include="Presentation\ViewModels\CalcNotificationType.cs" />
+    <Compile Include="BioEvalReportCreator.cs" />
+    <Compile Include="BioEvalMetricRow.cs" />
+    <Compile Include="AriaDocumentClient.cs" />
+    <Compile Include="Presentation\ViewModels\Controls\CalculatingEventArgs.cs" />
+    <Compile Include="Presentation\ViewModels\Controls\CalcProgressViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Controls\TemplateMatchingViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\ColdVolumeWithDoseMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\DoseComplementToVolumeMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\SMPCMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\MinDoseMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\StdDevDoseMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\PlanViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Controls\TemplatesViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\DoseToVolumeMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\DVHMetricSetupViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\DVHModels\DVHModelViewModel.cs" />
+    <Compile Include="Presentation\Controls\MetricEditor.xaml.cs">
+      <DependentUpon>MetricEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DvhColors.cs" />
+    <Compile Include="ExcelDocumentCreator.cs" />
+    <Compile Include="Presentation\Controls\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\EUDMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\DVHModels\LQBioDoseDVHModelViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\DVHModels\LQLBioDoseDVHModelViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\MaxDoseMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\MeanDoseMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\MetricRowViewModel.cs" />
+    <Compile Include="Presentation\Converters\DVHModelTypeToBoolConverter.cs" />
+    <Compile Include="Presentation\Converters\MetricResultConverter.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\MetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\NTCPMetricViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\DVHModels\StandardDVHModelViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\StructureDoesNotExistInPlanException.cs" />
+    <Compile Include="Presentation\ViewModels\TemplateViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\UserMessagedEventArgs.cs" />
+    <Compile Include="Presentation\ViewModels\VolumeRowViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\Metrics\VolumeWithDoseMetricViewModel.cs" />
+    <Compile Include="ProgressEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QcAnalysis\QcAnalyzer.cs" />
+    <Compile Include="QcAnalysis\QcColumn.cs" />
+    <Compile Include="QcAnalysis\QcResult.cs" />
+    <Compile Include="QcAnalysis\QcRow.cs" />
+    <Compile Include="QcAnalysis\QcTable.cs" />
+    <Compile Include="Reflection_functions.cs" />
+    <Compile Include="StructureMatchViewModel.cs" />
+    <Compile Include="TemplateCreator.cs" />
+    <Compile Include="TemplateLoader.cs" />
+    <Compile Include="BackgroundRunner.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="Presentation\ViewModels\BindableBase.cs" />
+    <Compile Include="Presentation\Converters\EnumToBoolConverter.cs" />
+    <Compile Include="Presentation\TemplateConfig.cs" />
+    <Compile Include="Presentation\Commands\AddMetricCommand.cs" />
+    <Compile Include="Presentation\Commands\RemoveMetricCommand.cs" />
+    <Compile Include="Presentation\ViewModels\Controls\MetricEditorViewModel.cs" />
+    <Compile Include="Presentation\ViewModels\StructureViewModel.cs" />
+    <Compile Include="Presentation\Converters\TypeConverter.cs" />
+    <Compile Include="Presentation\ViewModels\Controls\ViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Presentation\Controls\BioEvalReportDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\CalculatingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\ExportOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\InputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\MetricEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\SaveToDBWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\SMPCMetricInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\TemplateDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\Controls\TemplateMatchingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <!-- Use the approriate App.config depending on the build configuration
+       (see https://thegrayzone.co.uk/blog/2011/05/changing-appconfig-build-config) -->
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <None Include="Debug\App.config" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <None Include="Release\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\App.config.example" />
+    <None Include="Debug\NLog.config" />
+    <None Include="Release\NLog.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\dvhanalysislib\DVHAnalysis\DVHAnalysis.csproj">
+      <Project>{978f4acd-0018-4ded-a930-2f4e9a9c0721}</Project>
+      <Name>DVHAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Aria.Access.Rest\UMRO.Aria.Access.Rest.csproj">
+      <Project>{6a6648e0-40e9-4af4-897c-5a54d04bb3f5}</Project>
+      <Name>UMRO.Aria.Access.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Aria.Documents\UMRO.Aria.Documents.csproj">
+      <Project>{e97d7799-a918-4dca-b78b-374911feef37}</Project>
+      <Name>UMRO.Aria.Documents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Utils.DVHViewer\UMRO.Utils.DVHViewer.csproj">
+      <Project>{6f99536e-1f5a-4c85-834a-1623f15e1d6a}</Project>
+      <Name>UMRO.Utils.DVHViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.Utils.FlexibleTitleBar\UMRO.Utils.FlexibleTitleBar.csproj">
+      <Project>{e98053e9-7e5a-4de7-a234-50e4e16cc86f}</Project>
+      <Name>UMRO.Utils.FlexibleTitleBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MRoar_Database\MRoar_Database.csproj">
+      <Project>{2f0363ad-4313-4e48-b2ec-4afddfcf239b}</Project>
+      <Name>MRoar_Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.DvhAnalysis.AriaDb.Sql\UMRO.DvhAnalysis.AriaDb.Sql.csproj">
+      <Project>{ed6683af-ba83-4bf4-a352-46c3c94b8803}</Project>
+      <Name>UMRO.DvhAnalysis.AriaDb.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.DvhAnalysis.AriaDb\UMRO.DvhAnalysis.AriaDb.csproj">
+      <Project>{9c205be3-b2b5-4c98-a2cc-b78937ebed02}</Project>
+      <Name>UMRO.DvhAnalysis.AriaDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.DvhAnalysis.Logging.NLog\UMRO.DvhAnalysis.Logging.NLog.csproj">
+      <Project>{51af40e2-684c-4d95-95ed-1ec2d2752488}</Project>
+      <Name>UMRO.DvhAnalysis.Logging.NLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMRO.DvhAnalysis.Logging\UMRO.DvhAnalysis.Logging.csproj">
+      <Project>{0b0d06f7-d4c2-497e-896a-89df710011b5}</Project>
+      <Name>UMRO.DvhAnalysis.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ToDoList.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy "$(ProjectDir)\$(ConfigurationName)\NLog.config" "$(TargetDir)\NLog.config"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
