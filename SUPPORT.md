@@ -41,8 +41,7 @@ Alternative licensing may be available for organizations that need terms differe
 ## Use of licensing revenue
 Any net proceeds from commercial licensing will be directed to support ongoing development, maintenance, documentation, and user support for this project through one or more of the following channels, as applicable:
 - The Regents of the University of Michigan (University of Michigan) (contact Charles Mayo) 
-- NRG Oncology (contact Ying Xiao)
-- AAPM (American Association of Physicists in Medicine) (contact Charles Mayo) 
+
 
 Note: Listing these organizations is for transparency about intended use of funds and does not imply endorsement of this software by them.
 
