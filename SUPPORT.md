@@ -12,7 +12,7 @@ If you publish work that uses this code, please cite:
 Success stories help us justify maintenance and prioritize features.
 
 - Open an issue titled **“Usage”** with a short description (no sensitive data), or
-- Email: cmayo@med.umich.edu and ying.xiao@pennmedicine.upenn.edu
+- Email: cmayo@med.umich.edu
 
 ## 3) Contribute improvements
 We welcome:
