@@ -7,6 +7,7 @@
 - Choonik Lee (P, D, T, V)
 - Randy Ten Haken (P,D)
 - Martha Matuszak (P, D, T, V)
+- Joann Prisciandaro (P,D, T, V)
 - Jean Moran (P, D, T, V)
 - Kristy Brock (V,T)
 - Marc Kessler (T)
