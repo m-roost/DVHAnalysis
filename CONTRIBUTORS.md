@@ -1,5 +1,5 @@
 # Contributors
-- Andrew Bennent (andbenne@umich.edu) (L)
+- Andrew Bennett (andbenne@umich.edu) (L)
 - Carlos Anderson (@redcurry) (C1, D)
 - John Yao (@furtheraway) (C1, G)
 - Eduardo Acosta (C2)
